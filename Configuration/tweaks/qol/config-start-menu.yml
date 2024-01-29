@@ -1,0 +1,31 @@
+---
+title: Configure Start Menu
+description: Configures the Start Menu's settings for QoL
+privilege: TrustedInstaller
+actions:
+    # Configure start menu settings
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer'
+    value: 'NoStartMenuMFUprogramsList'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+    value: 'HideRecentlyAddedApps'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+    value: 'HideRecommendedPersonalizedSites'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+    value: 'ShowOrHideMostUsedApps'
+    data: '2'
+    type: REG_DWORD
+
+  - !run:
+    exeDir: true
+    exe: 'STARTMENU.cmd'
+    weight: 20

@@ -1,0 +1,10 @@
+---
+title: Disable Core Isolation
+description: Disables Core Isolation (VBS) based on the user's options
+privilege: TrustedInstaller
+option: 'vbs-disable'
+actions:
+  - !powerShell:
+    command: '& """$env:windir\EudynOS\Scripts\Config.ps1""" -DisableAllVBS'
+    exeDir: true
+    wait: true

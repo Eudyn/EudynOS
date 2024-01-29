@@ -1,0 +1,100 @@
+---
+title: Sets game priority
+description: Sets game priority too the highest/best values available.
+privilege: TrustedInstaller
+actions:
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'Background Only'
+    data: 'false'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'GPU Priority'
+    data: '8'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'Latency Sensitive'
+    data: 'true'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'Priority'
+    data: '6'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'Scheduling Category'
+    data: 'High'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games'
+    value: 'SFIO Priority'
+    data: 'High'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\EdgeUpdate'
+    value: 'DoNotUpdateToEdgeWithChromium'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power'
+    value: 'HiberbootEnabled'
+    data: '0'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling'
+    value: 'PowerThrottlingOff'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters'
+    value: 'MouseDataQueueSize'
+    data: '30'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'MouseSpeed'
+    data: '0'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'MouseThreshold1'
+    data: '0'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'MouseThreshold2'
+    data: '0'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'DoubleClickSpeed'
+    data: '500'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'DoubleClickHeight'
+    data: '4'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Mouse'
+    value: 'DoubleClickWidth'
+    data: '4'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Keyboard'
+    value: 'InitialKeyboardIndicators'
+    data: '0'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKCU\Control Panel\Keyboard'
+    value: 'KeyboardDelay'
+    data: '0'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity'
+    value: 'Enabled'
+    data: '0'
+    type: REG_DWORD

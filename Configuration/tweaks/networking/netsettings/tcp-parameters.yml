@@ -1,0 +1,55 @@
+---
+title: Changes TCP/IP settings
+description: Changes some tcp/ip settings to reduce latency and increase network performance.
+privilege: TrustedInstaller
+actions:
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters'
+    value: 'IRPStackSize'
+    data: '30'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'DefaultTTL'
+    data: '64'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'TCP1323Opts'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'MaxFreeTcbs'
+    data: '65536'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'MaxUserPort'
+    data: '65534'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'GlobalMaxTcpWindowSize'
+    data: '65535'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'TcpNoDelay'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
+    value: 'TcpAckfrequency'
+    data: '1'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile'
+    value: 'NetworkThrottlingIndex'
+    data: '4294967295'
+    type: REG_DWORD
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile'
+    value: 'NoLazyMode'
+    data: '1'
+    type: REG_DWORD

@@ -1,0 +1,7 @@
+---
+title: Configure Storage Sense
+description: Disables Storage Sense
+privilege: TrustedInstaller
+actions:
+    # Disable Storage Sense
+  - !registryValue: {path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy', value: '01', type: REG_DWORD, data: '0'}

@@ -1,0 +1,9 @@
+---
+title: Delete Windows-version specific tweaks
+description:  Deletes Windows 10 or Windows 11 specific tweaks.
+privilege: TrustedInstaller
+actions:
+    # Windows 11-only
+  - !file: {path: '%windir%\EudynOS\Scripts\Background Apps', builds: [ '!>=22000' ]}
+  - !file: {path: '%windir%\EudynOS\Scripts\File Explorer Customization\Compact View', builds: [ '!>=22000' ]}
+  - !file: {path: '%windir%\EudynOS\Scripts\File Explorer Customization\Gallery', builds: [ '!>=22000' ]}

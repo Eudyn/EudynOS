@@ -1,0 +1,53 @@
+---
+title: Components
+description: Removes certain Windows components
+privilege: TrustedInstaller
+actions:
+    # Remove Security Center startup item
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run', value: 'SecurityHealth', operation: delete}
+
+    # Disable Smart App Control
+    # Causes slow app loading issues and sends data to Microsoft
+  - !registryValue:
+    path: 'HKLM\SYSTEM\CurrentControlSet\Control\CI\Policy'
+    value: 'VerifiedAndReputablePolicyState'
+    data: '0'
+    type: REG_DWORD
+
+    # Microsoft Edge
+  - !writeStatus: {status: 'Removing Microsoft Edge', option: 'uninstall-edge'}
+  - !cmd:
+    command: 'powershell.exe -NoP -EP Unrestricted -File "%windir%\EudynOS\Scripts\Remove Edge.ps1" -UninstallEdge -KeepAppX -Exit'
+    wait: true
+    runas: currentUserElevated
+    option: 'uninstall-edge'
+    # AppX uninstallation in the script seems to fail, therefore it's not used and AME Wizard is used instead
+  - !appx: {name: '*Microsoft.MicrosoftEdge.Stable*', type: family, option: 'uninstall-edge'}
+  - !appx: {name: '*Microsoft.MicrosoftEdge*', type: family, option: 'uninstall-edge'}
+  - !appx: {name: '*Microsoft.MicrosoftEdgeDevToolsClient*', type: family, option: 'uninstall-edge'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe', operation: add, option: 'uninstall-edge'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.MicrosoftEdge_8wekyb3d8bbwe', operation: add, option: 'uninstall-edge'}
+  - !registryKey: {path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Appx\AppxAllUserStore\Deprovisioned\Microsoft.MicrosoftEdgeDevToolsClient_8wekyb3d8bbwe', operation: add, option: 'uninstall-edge'}
+
+    # OneDrive
+    # The actual OneDrive setup in Windows is stripped at a component-level in the miscellaneous package
+  - !writeStatus: {status: 'Removing OneDrive'}
+  - !run: {exeDir: true, exe: 'Remove Onedrive.cmd'}
+
+  - !writeStatus: {status: 'Removing components'}
+  - !run:
+    exe: 'powershell'
+    args: '& """$env:windir\EudynOS\PackagesEnvironment\main.ps1""" -PlaybookInstall'
+    option: 'defender-disable'
+  - !run:
+    exe: 'powershell'
+    args: '& """$env:windir\EudynOS\PackagesEnvironment\main.ps1""" -PlaybookInstall -EverythingButDefender'
+    option: 'defender-enable'
+
+    # Update Health Tools
+  - !powerShell: {command: 'Import-Module -Name """$env:windir\EudynOS\Scripts\Modules\Uninstall-MsiexecAppByName\Uninstall-MsiexecAppByName.psm1"""; Uninstall-MsiexecAppByName -Name ''Microsoft Update Health Tools'''}
+
+    # PC Health Check
+  - !powerShell: {command: 'Import-Module -Name """$env:windir\EudynOS\Scripts\Modules\Uninstall-MsiexecAppByName\Uninstall-MsiexecAppByName.psm1"""; Uninstall-MsiexecAppByName -Name ''Windows PC Health Check'''}
+    # The Microsoft Update Health Service stays, which is a Windows bug
+  - !service: {name: 'uhssvc', deleteUsingRegistry: true}

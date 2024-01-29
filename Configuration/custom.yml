@@ -1,0 +1,23 @@
+---
+title: Root Playbook File
+description: Runs all of the playbook files
+privilege: TrustedInstaller
+actions: []
+tasks:
+  # Configure PowerShell first so that other PowerShell scripts work
+  # NGEN - PowerShell optimization
+  - tweaks\statuses\status-ngen.yml
+  - tweaks\scripts\script-ngen.yml
+  - tweaks\qol\config-powershell.yml
+
+  # Cleanup script takes longer to finish so it has its own status
+  # It's ran here as you can't check when cleanmgr is finished
+  - tweaks\statuses\status-cleanup.yml
+  - tweaks\scripts\script-cleanup.yml
+
+  # Main tasks
+  - features\start.yml
+  - features\services.yml
+  - features\components.yml
+  - features\appx.yml
+  - tweaks.yml

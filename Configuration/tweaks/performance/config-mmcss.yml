@@ -1,0 +1,11 @@
+---
+title: Configure the Multimedia Class Scheduler Service
+description: Configures MMCSS for the best performance
+privilege: TrustedInstaller
+actions:
+    # Set system responsiveness to 5%
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile'
+    value: 'SystemResponsiveness'
+    data: '5'
+    type: REG_DWORD

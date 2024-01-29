@@ -1,0 +1,15 @@
+---
+title: Configure OEM Information
+description: Configures OEM information to contain the EudynOS version
+privilege: TrustedInstaller
+actions:
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation'
+    value: 'Manufacturer'
+    data: 'Eudyn'
+    type: REG_SZ
+  - !registryValue:
+    path: 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation'
+    value: 'Model'
+    data: 'EudynOS v0.1'
+    type: REG_SZ

@@ -1,0 +1,59 @@
+---
+title: Services
+description: Configures services
+privilege: TrustedInstaller
+actions:
+  - !writeStatus: {status: 'Configuring services'}
+
+  # Backup default Windows serivces & drivers
+  - !cmd:
+    command: 'powershell -NoP -EP Unrestricted -File "BACKUP.ps1" "%windir%\EudynOS\Other\DefaultServices.reg"'
+    wait: true
+    exeDir: true
+
+  # ------------------------ Services ------------------------
+
+  - !service: {name: 'diagnosticshub.standardcollector.service', operation: change, startup: 4}
+  - !service: {name: 'diagsvc', operation: change, startup: 4}
+  - !service: {name: 'DispBrokerDesktopSvc', operation: change, startup: 4}
+  - !service: {name: 'lfsvc', operation: change, startup: 4}
+  - !service: {name: 'MapsBroker', operation: change, startup: 4}
+  - !service: {name: 'OneSyncSvc', operation: change, startup: 4}
+  - !service: {name: 'WdiServiceHost', operation: change, startup: 4}
+  - !service: {name: 'WdiSystemHost', operation: change, startup: 4}
+  - !service: {name: 'wercplsupport', operation: change, startup: 4}
+  - !service: {name: 'WerSvc', operation: change, startup: 4}
+  - !service: {name: 'WSearch', operation: change, startup: 4}
+  - !service: {name: 'autotimesvc', operation: change, startup: 4}
+  - !service: {name: 'fhsvc', operation: change, startup: 4}
+  - !service: {name: 'PeerDistSvc', operation: change, startup: 4}
+  - !service: {name: 'PhoneSvc', operation: change, startup: 4}
+  - !service: {name: 'RasMan', operation: change, startup: 4}
+  - !service: {name: 'SEMgrSvc', operation: change, startup: 4}
+  - !service: {name: 'wbengine', operation: change, startup: 4}
+  - !service: {name: 'wisvc', operation: change, startup: 4}
+  - !service: {name: 'WalletService', operation: change, startup: 4}
+  - !service: {name: 'TermService', operation: change, startup: 4}
+  - !service: {name: 'SDRSVC', operation: change, startup: 4}
+  - !service: {name: 'RemoteRegistry', operation: change, startup: 4}
+  - !service: {name: 'RasAuto', operation: change, startup: 4}
+  - !service: {name: 'MicrosoftEdgeElevationService', operation: change, startup: 4}
+  - !service: {name: 'edgeupdate', operation: change, startup: 4}
+  - !service: {name: 'edgeupdatem', operation: change, startup: 4}
+  - !service: {name: 'FrameServerMonitor', operation: change, startup: 4}
+  - !service: {name: 'FrameServer', operation: change, startup: 4}
+  - !service: {name: 'RetailDemo', operation: change, startup: 4}
+  - !service: {name: 'WbioSrvc', operation: change, startup: 4}
+  - !service: {name: 'BDESVC', operation: change, startup: 4}
+  - !service: {name: 'WFDSConMgrSvc', operation: change, startup: 4}
+  - !service: {name: 'wcncsvc', operation: change, startup: 4}
+
+  # ---------------------- Services END ----------------------
+
+  # ------------------------- Drivers ------------------------
+
+  - !service: {name: 'Telemetry', operation: change, startup: 4}
+  - !service: {name: 'circlass', operation: change, startup: 4}
+  - !service: {name: 'CompositeBus', operation: change, startup: 4}
+
+  # ----------------------- Drivers END ----------------------
