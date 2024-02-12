@@ -8,7 +8,6 @@
 - The playbook is compatible with both Windows 10 and Windows 11 (Home and Pro editions). Ensure your operating system is activated, and you have an active internet connection.
 - If you are using a laptop, make sure it is connected to a power source.
 - It is advisable to have your operating system updated for a smoother installation process.
-- Be aware that preview or beta versions might encounter issues.
 
 #### Installation Steps
 
