@@ -43,4 +43,4 @@
 Congratulations! You have successfully installed the playbook on your Windows system. If you encounter any issues, refer to the troubleshooting section or contact our support team through either the Discord server or GitHub.
 
 #### Additional Notes
-Please note that beta versions may encounter issues. It is recommended to use the "issues" section and the Discord server to report problems and receive assistance. Known issues will be reported in Discord as soon as possible, and once a solution is found, it will be provided.
+❗️ Please note that beta versions may encounter issues. It is recommended to use the "issues" section and the Discord server to report problems and receive assistance. Known issues will be reported in Discord as soon as possible, and once a solution is found, it will be provided.
