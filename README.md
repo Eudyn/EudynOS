@@ -8,6 +8,7 @@
 - The playbook is compatible with both Windows 10 and Windows 11 (Home and Pro editions). Ensure your operating system is activated, and you have an active internet connection.
 - If you are using a laptop, make sure it is connected to a power source.
 - It is advisable to have your operating system updated for a smoother installation process.
+- Be aware that preview or beta versions might encounter issues.
 
 #### Installation Steps
 
@@ -42,5 +43,4 @@
 Congratulations! You have successfully installed the playbook on your Windows system. If you encounter any issues, refer to the troubleshooting section or contact our support team through either the Discord server or GitHub.
 
 #### Additional Notes
-❗️ Please note that beta versions may encounter issues. It is recommended to use the "issues" section and the Discord server to report problems and receive assistance. Known issues will be reported in Discord as soon as possible, and once a solution is found, it will be provided.
-Please note that a new update will be released every month to ensure that EudynOS is equipped with the latest optimizations and improvements.
+❗️Please note that a new update will be released every month to ensure that EudynOS is equipped with the latest optimizations and improvements.
