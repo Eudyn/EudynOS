@@ -13,7 +13,7 @@
 #### Installation Steps
 
 1. **Download AME Wizard and Playbook**
-   - [EudynOS Playbook](https://github.com/Eudyn/EudynOS/releases)
+   - [EudynOS Playbook](https://github.com/Eudyn/EudynOS/releases/download/v0.1-beta/EudynOS.v0.1.-.Beta.apbx)
    - [AME Wizard](https://download.ameliorated.io/AME%20Wizard%20Beta.zip)
 
 2. **Extract and Open AME Wizard**
