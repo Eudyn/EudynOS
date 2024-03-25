@@ -41,6 +41,3 @@
    - Proceed through the remaining steps and wait for the playbook installation to complete.
 
 Congratulations! You have successfully installed the playbook on your Windows system. If you encounter any issues, refer to the troubleshooting section or contact our support team through either the Discord server or GitHub.
-
-#### Additional Notes
-❗️Please note that a new update will be released every month to ensure that EudynOS is equipped with the latest optimizations and improvements.
