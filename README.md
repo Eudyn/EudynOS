@@ -14,8 +14,6 @@ I regret to inform you that as of 04/02/2024 (DD/MM/YYYY), this repository is no
 
 - **Community Takeover:** If there is interest from the community to continue development, I welcome others to fork the repository.
 
-  ---
-
 ## EudynOS
 
 🐍 EudynOS optimizes Windows for gamers by streamlining processes, enhancing network settings, and maximizing system resources to boost gaming performance. It targets background tasks, minimizes latency, and ensures smooth graphics, creating an optimized gaming experience.
