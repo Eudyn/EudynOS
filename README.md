@@ -4,7 +4,7 @@
 
 Dear users and contributors,
 
-I regret to inform you that as of 04/02/2024 (DD/MM/YYYY), this repository is no longer actively maintained, and I am discontinuing support for it. Due to various reasons, including time constraints and shifting priorities, I am unable to dedicate the necessary resources to keep this project up to date.
+I regret to inform you that as of 27/08/2025 (DD/MM/YYYY), this repository is no longer actively maintained, and I am discontinuing support for it. Due to various reasons, including time constraints and shifting priorities, I am unable to dedicate the necessary resources to keep this project up to date.
 
 ### What does this mean?
 
